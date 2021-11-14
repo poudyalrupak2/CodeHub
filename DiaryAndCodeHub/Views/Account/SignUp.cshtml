@@ -1,0 +1,155 @@
+﻿@model Models.ViewModel.SignupViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Code</title>
+
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <!-- App CSS -->
+    <link type="text/css" href="~/Content/app.css" rel="stylesheet">
+    <link type="text/css" href="~/Content/app.rtl.css" rel="stylesheet">
+
+    <!-- Simplebar -->
+    <link type="text/css" href="~/Vendors/simplebar.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed data-push data-has-scrolling-region>
+        <div class="mdk-drawer-layout__content mdk-header-layout__content--scrollable" style="overflow-y: auto;" data-simplebar data-simplebar-force-enabled="true">
+
+
+            <div class="container h-vh d-flex justify-content-center align-items-center flex-column">
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <a href="index.html" class="drawer-brand-circle mr-2">C</a>
+                    <h2 class="ml-2 text-bg mb-0"><strong>Code Hub</strong></h2>
+                </div>
+                <div class="row w-100 justify-content-center">
+                    <div class="card card-signup mb-3">
+                        <div class="card-body">
+                            @using (Html.BeginForm("SignUp", "Account", FormMethod.Post, new { role = "form",@enctype="multipart/form-data" }))
+                            {
+                                @Html.ValidationSummary("", new { @class = "text-danger" })
+                                @Html.AntiForgeryToken()
+
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>First Name</label>
+                                        <div class="input-group input-group--inline">
+                                            <div class="input-group-addon">
+                                                <i class="material-icons">person</i>
+                                            </div>
+                                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="lastname">Last Name</label>
+                                        <div class="input-group input-group--inline">
+                                            <div class="input-group-addon">
+                                                <i class="material-icons">person</i>
+                                            </div>
+                                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Dob</label>
+                                    <div class="input-group input-group--inline">
+                                        <div class="input-group-addon">
+                                            <i class="material-icons">
+                                                perm_contact_calendar
+                                            </i>
+                                        </div>
+                                        @Html.TextBoxFor(m => m.DOB, new { type = "date", @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group left-icon">
+                                    <label>Email</label>
+                                    <div class="input-group input-group--inline">
+                                        <div class="input-group-addon">
+                                            <i class="material-icons">mail_outline</i>
+                                        </div>
+                                        @Html.TextBoxFor(m => m.Email, new { type = "email", @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group left-icon">
+                                    <label>Password</label>
+                                    <div class="input-group input-group--inline">
+                                        <div class="input-group-addon">
+                                            <i class="material-icons">lock_outline</i>
+                                        </div>
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    </div>
+                                </div>
+                                <div class="form-group left-icon">
+                                    <label>Photo</label>
+
+                                    <div class="input-group input-group--inline">
+                                        <div class="input-group-addon">
+                                            <i class="material-icons">party_mode</i>
+                                        </div>
+                                        <input type="file" id="myimage" class="form-control" name="Image">
+                                    </div>
+                                </div>
+                                <img id="blah" src="" width="100px" height="100px" />
+
+                                <div class="text-center">
+                                    <input type="submit" class="btn btn-primary" value="Register" />
+
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <span class="mr-2">Already have an account?</span>
+                    <a href="@Url.Action("Login","Account")">Log In</a>
+                </div>
+
+
+            </div>
+        </div>
+        <script src="~/Scripts/jquery-3.4.1.js"></script>
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]); // convert to base64 string
+                }
+            }
+
+            $("#myimage").change(function () {
+                $("img#blah").show();
+
+                readURL(this);
+            });
+
+            $(document).ready(function () {
+                $("img#blah").hide();
+                'use strict';
+
+                // Self Initialize DOM Factory Components
+                domFactory.handler.autoInit();
+
+            })
+
+
+            
+        </script>
+</body>
+
+</html>

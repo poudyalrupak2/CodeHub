@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Code Hub</title>
+
+
+    <link type="text/css" href="~/Content/vendor-morris.css" rel="stylesheet">
+    <link type="text/css" href="~/Content/vendor-bootstrap-datepicker.css" rel="stylesheet">
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <!-- App CSS -->
+    <link type="text/css" href="~/Content/app.css" rel="stylesheet">
+    <link type="text/css" href="~/Content/app.rtl.css" rel="stylesheet">
+
+    <!-- Simplebar -->
+    <link type="text/css" href="~/Vendors/simplebar.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="mdk-drawer-layout js-mdk-drawer-layout" data-fullbleed data-push data-responsive-width="992px" data-has-scrolling-region>
+
+        <div class="mdk-drawer-layout__content">
+            <!-- header-layout -->
+            <div class="mdk-header-layout js-mdk-header-layout  mdk-header--fixed  mdk-header-layout__content--scrollable">
+                <!-- header -->
+                <div class="mdk-header js-mdk-header bg-primary" data-fixed>
+                    <div class="mdk-header__content">
+
+                        <nav class="navbar navbar-expand-md bg-primary navbar-dark d-flex-none">
+                            <button class="btn btn-link text-white pl-0" type="button" data-toggle="sidebar">
+                                <i class="material-icons align-middle md-36">short_text</i>
+                            </button>
+                            <div class="page-title m-0">Code Hub</div>
+
+                            <div class="collapse navbar-collapse" id="mainNavbar">
+                                <ul class="navbar-nav ml-auto align-items-center">
+                                  
+                                    <li class="nav-item dropdown nav-language d-flex align-items-center">
+                                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            EN
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right ">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <a href="account.html" class="dropdown-item active">
+                                                        <img src="http://flags.fmcdn.net/data/flags/w1160/us.png" style="width: 25px; vertical-align: middle" alt="English"> English
+                                                    </a>
+                                                </li>
+                                                @*<li>
+                                                    <a href="account.html" class="dropdown-item">
+                                                        <img src="http://flags.fmcdn.net/data/flags/w1160/fr.png" style="width: 25px; vertical-align: middle" alt="French"> French
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="account.html" class="dropdown-item">
+                                                        <img src="http://flags.fmcdn.net/data/flags/w1160/de.png" style="width: 25px; vertical-align: middle" alt="English"> German
+                                                    </a>
+                                                </li>*@
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown notifications d-flex align-self-center align-items-center" id="navbarNotifications">
+                                        <a href="#" class="nav-link dropdown-toggle notifications--active" data-toggle="dropdown" aria-expanded="false">
+                                            <i class="material-icons align-middle">notifications</i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notificationsDropdown" id="notificationsDropdown">
+                                            <ul class="nav nav-tabs-notifications" id="notifications-ul" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-selected="true">Notifications</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="alerts-tab" data-toggle="tab" href="#alerts" role="tab" aria-controls="alerts" aria-selected="false">Alerts</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">Messages</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content" id="notifications-tabs">
+                                                <div class="tab-pane fade show active" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="w-100">
+                                                                <a href="#">john</a> received a new quote
+                                                            </div>
+                                                            <div class="w-100 text-muted">4 secs ago</div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="w-100">
+                                                                <a href="#">karen</a> received a new quote
+                                                            </div>
+                                                            <div class="w-100 text-muted">25 mins ago</div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="w-100">
+                                                                <a href="#">jim</a> received a new quote
+                                                            </div>
+                                                            <div class="w-100 text-muted">7 hrs ago</div>
+                                                        </li>
+                                                        <li class="list-group-item text-right">
+                                                            <a href="#">
+                                                                <span class="align-middle">View All</span>
+                                                                <i class="material-icons md-18 align-middle">arrow_forward</i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="alerts" role="tabpanel" aria-labelledby="alerts-tab">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <i class="material-icons align-middle mr-2 text-warning">
+                                                                    info_outline
+                                                                </i>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">
+                                                                        <a href="profile.html">john</a> received a new
+                                                                        <a href="#">quote</a>
+                                                                    </div>
+                                                                    <div class="w-100 text-muted">4 secs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <i class="material-icons align-middle mr-2 text-success">
+                                                                    check_circle
+                                                                </i>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">
+                                                                        <a href="profile.html">karen</a> completed a
+                                                                        <a href="#">task</a>
+                                                                    </div>
+                                                                    <div class="w-100 text-muted">25 mins ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <i class="material-icons align-middle mr-2 text-danger">
+                                                                    warning
+                                                                </i>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">
+                                                                        <a href="profile.html">jim</a> removed a
+                                                                        <a href="#">task</a>
+                                                                    </div>
+                                                                    <div class="w-100 text-muted">7 hrs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item text-right">
+                                                            <a href="#">
+                                                                <span class="align-middle">View All</span>
+                                                                <i class="material-icons md-18 align-middle">arrow_forward</i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <a href="profile.html">
+                                                                    <img src="assets/images/avatars/person-1.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="">
+                                                                </a>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">I started that project we talked...</div>
+                                                                    <div class="w-100 text-muted">4 secs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <a href="profile.html">
+                                                                    <img src="assets/images/avatars/person-11.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="">
+                                                                </a>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">Can we arrange a meeting?...</div>
+                                                                    <div class="w-100 text-muted">25 mins ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <div class="media align-items-center">
+                                                                <a href="profile.html">
+                                                                    <img src="assets/images/avatars/person-12.jpg" class="img-fluid rounded-circle mr-2" width="35" alt="">
+                                                                </a>
+                                                                <div class="media-body">
+                                                                    <div class="w-100">We need to fix some bugs...</div>
+                                                                    <div class="w-100 text-muted">7 hrs ago</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-group-item text-right">
+                                                            <a href="#">
+                                                                <span class="align-middle">View All</span>
+                                                                <i class="material-icons md-18 align-middle">arrow_forward</i>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item nav-divider">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link dropdown-toggle dropdown-clear-caret" data-toggle="sidebar" data-target="#user-drawer">
+                                            Account
+                                            <img src="https://pbs.twimg.com/profile_images/928893978266697728/3enwe0fO_400x400.jpg" class="img-fluid rounded-circle ml-1" width="35"
+                                                 alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- content -->
+                <div class="mdk-header-layout__content top-navbar mdk-header-layout__content--scrollable h-100">
+                    <!-- main content -->
+
+
+
+
+                    <div class="container-fluid">
+                        @RenderBody()
+
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- // END drawer-layout__content -->
+        <!-- drawer -->
+        <div class="mdk-drawer js-mdk-drawer" id="default-drawer">
+            <div class="mdk-drawer__content">
+                <div class="mdk-drawer__inner" data-simplebar data-simplebar-force-enabled="true">
+
+                    <nav class="drawer  drawer--dark">
+                        <div class="drawer-spacer">
+                            <div class="media align-items-center">
+                                <a href="@Url.Action("Index","Code")" class="drawer-brand-circle mr-2">C</a>
+                                <div class="media-body">
+                                    <a href="index.html" class="h5 m-0 text-link">Code Hub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- HEADING -->
+                        <div class="py-2 drawer-heading">
+                            Dashboard
+                        </div>
+                        <!-- DASHBOARDS MENU -->
+                        <ul class="drawer-menu" id="dasboardMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item active ">
+                                <a href="@Url.Action("Index","Code")">
+                                    <i class="material-icons">poll</i>
+                                    <span class="drawer-menu-text"> My Code</span>
+                                </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="@Url.Action("Index","InpWork")">
+                                    <i class="material-icons">dns</i>
+                                    <span class="drawer-menu-text"> My Work</span>
+                                </a>
+                            </li>
+                           
+                        </ul>
+
+                        <!-- HEADING -->
+                       
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- // END drawer -->
+        <!-- drawer -->
+        <div class="mdk-drawer js-mdk-drawer" id="user-drawer" data-position="right" data-align="end">
+            <div class="mdk-drawer__content">
+                <div class="mdk-drawer__inner" data-simplebar data-simplebar-force-enabled="true">
+                    <nav class="drawer drawer--light">
+
+                        <ul class="drawer-menu" id="userMenu" data-children=".drawer-submenu">
+                            <li class="drawer-menu-item">
+                                <a href="#">
+                                    <i class="material-icons">lock</i>
+                                    <span class="drawer-menu-text"> Account</span>
+                                </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="#">
+                                    <i class="material-icons">account_circle</i>
+                                    <span class="drawer-menu-text"> Profile</span>
+                                </a>
+                            </li>
+                            <li class="drawer-menu-item">
+                                <a href="@Url.Action("LogOff","Account")">
+                                    <i class="material-icons">exit_to_app</i>
+                                    <span class="drawer-menu-text"> Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- // END drawer -->
+
+    </div>
+    <!-- // END drawer-layout -->
+    <!-- jQuery -->
+    <script src="~/Vendors/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/Vendors/popper.js"></script>
+    <script src="~/Vendors/bootstrap.min.js"></script>
+
+    <!-- Simplebar -->
+    <!-- Used for adding a custom scrollbar to the drawer -->
+    <script src="~/Vendors/simplebar.js"></script>
+
+
+    <!-- Vendor -->
+    <script src="~/Vendors/Chart.min.js"></script>
+    <script src="~/Vendors/simplebar.js"></script>
+
+
+    <!-- APP -->
+    <script src="~/Scripts/color_variables.js"></script>
+    <script src="~/Scripts/app.js"></script>
+
+
+    <script src="~/Vendors/dom-factory.js"></script>
+    <!-- DOM Factory -->
+    <script src="~/Vendors/material-design-kit.js"></script>
+    <!-- MDK -->
+
+   
+    <script>
+        (function () {
+            'use strict';
+            // Self Initialize DOM Factory Components
+            domFactory.handler.autoInit()
+
+
+            // Connect button(s) to drawer(s)
+            var sidebarToggle = document.querySelectorAll('[data-toggle="sidebar"]')
+
+            sidebarToggle.forEach(function (toggle) {
+                toggle.addEventListener('click', function (e) {
+                    var selector = e.currentTarget.getAttribute('data-target') || '#default-drawer'
+                    var drawer = document.querySelector(selector)
+                    if (drawer) {
+                        if (selector == '#default-drawer') {
+                            $('.container-fluid').toggleClass('container--max');
+                        }
+                        drawer.mdkDrawer.toggle();
+                    }
+                })
+            })
+        })()
+    </script>
+
+
+    <script src="~/vendors/morris.min.js"></script>
+    <script src="~/vendors/raphael.min.js"></script>
+    <script src="~/vendors/bootstrap-datepicker.min.js"></script>
+    <script src="~/Scripts/datepicker.js"></script>
+    @RenderSection("scripts", required: false)
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+﻿@model Models.InpWorks
+<style>
+    pre {
+        background-color: #EFF0F1;
+        border: 1px solid #DDD;
+        padding: 10px;
+    }
+</style>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">@Model.Date</h4>
+    </div>
+    <div class="card-body bg-body-bg">
+        <div class="row" id="drag-cards">
+            @Html.Raw(Model.Description)
+
+        </div>
+    </div>
+</div>
+

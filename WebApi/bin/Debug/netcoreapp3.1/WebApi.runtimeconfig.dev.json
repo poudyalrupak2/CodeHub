@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Rupak\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Rupak\\.nuget\\packages"
+    ]
+  }
+}

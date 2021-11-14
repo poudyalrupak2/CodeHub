@@ -1,0 +1,81 @@
+﻿@model Models.ViewModel.CodeHubVm
+<style>
+    pre {
+        background-color: #EFF0F1;
+        border: 1px solid #DDD;
+        padding: 10px;
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <input type="button" value="Copy code to clipboard" class="btn btn-primary" style="float:right;padding-bottom:10px;margin-bottom:10px;" onclick="selectElementContents();">
+    </div>
+</div>
+@Html.Raw(Model.Inpcodes.Description)
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Images</h4>
+    </div>
+    <div class="card-body bg-body-bg">
+        <div class="row" id="drag-cards">
+            @foreach (var item in Model.Img)
+            {
+                <div class="col-lg-3">
+                    <div class="card mb-3">
+                        <a href="@Url.Content("~"+item.ImagePath)" data-fancybox="gallery">
+                            <img src="@Url.Content("~"+item.ImagePath)" alt="@Model.Inpcodes.Topic" class="card-img-top">
+                        </a>
+                        @*<div class="card-body">
+                                <h5 class="card-title mb-0">Person 1</h5>
+                            </div>*@
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts{
+
+    <script>
+        function selectElementContents() {
+            var textToCopy = document.querySelector('.prettyprint');
+            var currentRange;
+            if (document.getSelection().rangeCount > 0) {
+                //the user has a text selection range, store it
+                currentRange = document.getSelection().getRangeAt(0);
+                //remove the current selection
+                window.getSelection().removeRange(currentRange);
+            }
+            else {
+                //they didn't have anything selected
+                currentRange = false;
+            }
+
+            //create a selection range
+            var CopyRange = document.createRange();
+            //choose the element we want to select the text of
+            CopyRange.selectNode(textToCopy);
+            //select the text inside the range
+            window.getSelection().addRange(CopyRange);
+            //copy the text to the clipboard
+            document.execCommand("copy");
+
+            //remove our selection range
+            window.getSelection().removeRange(CopyRange);
+
+            //return the old selection range
+            if (currentRange) {
+                window.getSelection().addRange(currentRange);
+            }
+
+            alert("successfully copied to clipboard");
+        }
+    </script>
+
+}
+
+
+
+
+     
