@@ -1,31 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\WebApi\\WebApi.csproj": {}
+    "D:\\Projects\\Asp.net\\CodeHub\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\Models\\Models.csproj": {
+    "D:\\Projects\\Asp.net\\CodeHub\\Models\\Models.csproj": {
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\Models\\Models.csproj",
+        "projectUniqueName": "D:\\Projects\\Asp.net\\CodeHub\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\Models\\Models.csproj"
+        "projectPath": "D:\\Projects\\Asp.net\\CodeHub\\Models\\Models.csproj"
       },
       "frameworks": {
         "net472": {}
       }
     },
-    "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\WebApi\\WebApi.csproj": {
+    "D:\\Projects\\Asp.net\\CodeHub\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "D:\\Projects\\Asp.net\\CodeHub\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\Rupak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\WebApi\\obj\\",
+        "projectPath": "D:\\Projects\\Asp.net\\CodeHub\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Asp.net\\CodeHub\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rupak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -36,9 +40,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\Rupak\\source\\repos\\DiaryAndCodeHub\\Models\\Models.csproj"
+              "D:\\Projects\\Asp.net\\CodeHub\\Models\\Models.csproj": {
+                "projectPath": "D:\\Projects\\Asp.net\\CodeHub\\Models\\Models.csproj"
               }
             }
           }
@@ -51,6 +56,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNet.Identity.EntityFramework": {
               "target": "Package",
@@ -119,7 +125,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

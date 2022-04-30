@@ -32,7 +32,8 @@ namespace DiaryAndCodeHub.Controllers
             }
             public ActionResult Create()
             {
-                return View();
+            InpWorks inp = new InpWorks();
+                return View(inp);
 
             }
             [HttpPost]

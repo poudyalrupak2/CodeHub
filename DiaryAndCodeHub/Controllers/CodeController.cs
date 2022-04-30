@@ -33,7 +33,8 @@ namespace DiaryAndCodeHub.Controllers
             return View(a);
         }
         public ActionResult Create() {
-            return View();
+            InpCodes codes = new InpCodes();
+            return View(codes);
         
         }
         [HttpPost]
